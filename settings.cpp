@@ -75,7 +75,7 @@ void drawSettings(sf::RenderWindow& window, sf::Font& font, int selectedOption) 
     // Instructions
     sf::Text instructions;
     instructions.setFont(font);
-    instructions.setString("Use LEFT/RIGHT to adjust | UP/DOWN to navigate | ENTER to confirm");
+    instructions.setString(" ");
     instructions.setCharacterSize(18);
     instructions.setFillColor(sf::Color(200, 200, 200));
     instructions.setPosition(200, WINDOW_HEIGHT - 80);
