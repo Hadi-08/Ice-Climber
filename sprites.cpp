@@ -1,8 +1,6 @@
 #include "sprites.hpp"
 
-// ============================================================================
 // POPO (Blue Ice Climber Character)
-// ============================================================================
 
 void createPopoSprite(sf::Texture& texture) {
     sf::RenderTexture renderTex;
@@ -65,11 +63,7 @@ void createPopoSprite(sf::Texture& texture) {
     renderTex.display();
     texture = renderTex.getTexture();
 }
-
-// ============================================================================
 // TOPI (White Seal Enemy)
-// ============================================================================
-
 void createTopiSprite(sf::Texture& texture) {
     sf::RenderTexture renderTex;
     renderTex.create(32, 32);
@@ -130,10 +124,7 @@ void createTopiSprite(sf::Texture& texture) {
     renderTex.display();
     texture = renderTex.getTexture();
 }
-
-// ============================================================================
 // VEGETABLES (Collectibles)
-// ============================================================================
 
 void createEggplantSprite(sf::Texture& texture) {
     sf::RenderTexture renderTex;

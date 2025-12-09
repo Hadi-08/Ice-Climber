@@ -4,9 +4,7 @@
 #include "camera.hpp"
 #include "stages.hpp"
 
-// ============================================================================
 // MAIN MENU
-// ============================================================================
 
 void drawMainMenu(sf::RenderWindow& window, sf::Font& font, int selectedOption) {
     // Title with Ice Climber style
@@ -96,10 +94,7 @@ void handleMainMenuInput(sf::Keyboard::Key key, int& selectedOption, int& gameSt
     }
 }
 
-// ============================================================================
 // HIGH SCORE SCREEN
-// ============================================================================
-
 void drawHighScore(sf::RenderWindow& window, sf::Font& font) {
     // Title
     sf::Text title;
@@ -145,9 +140,7 @@ void drawHighScore(sf::RenderWindow& window, sf::Font& font) {
     window.draw(backText);
 }
 
-// ============================================================================
 // HOW TO PLAY SCREEN
-// ============================================================================
 
 void drawHowToPlay(sf::RenderWindow& window, sf::Font& font) {
     // Title
@@ -207,9 +200,7 @@ void drawHowToPlay(sf::RenderWindow& window, sf::Font& font) {
     window.draw(backText);
 }
 
-// ============================================================================
 // PAUSE MENU
-// ============================================================================
 
 void drawPauseMenu(sf::RenderWindow& window, sf::Font& font, int selectedOption) {
     // Semi-transparent overlay
@@ -271,9 +262,7 @@ void handlePauseMenuInput(sf::Keyboard::Key key, int& selectedOption, int& gameS
     }
 }
 
-// ============================================================================
 // GAME OVER SCREEN
-// ============================================================================
 
 void drawGameOver(sf::RenderWindow& window, sf::Font& font) {
     // Semi-transparent overlay

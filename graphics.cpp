@@ -6,9 +6,7 @@
 #include "string_utils.hpp"
 #include <cmath>
 
-// ============================================================================
 // LOAD ALL RESOURCES
-// ============================================================================
 sf::Sprite player;
 
 bool loadResources(sf::Texture& playerTex, sf::Texture& enemyTex,
@@ -85,9 +83,7 @@ bool loadResources(sf::Texture& playerTex, sf::Texture& enemyTex,
     return true;
 }
 
-// ============================================================================
 // RENDER GAME WITH CAMERA SCROLLING
-// ============================================================================
 
 void renderGame(sf::RenderWindow& window, sf::Texture& bgTex, sf::Texture& playerTex,
     sf::Texture& enemyTex, sf::Texture& eggplantTex, sf::Font& font) {

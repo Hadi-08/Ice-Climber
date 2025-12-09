@@ -19,7 +19,7 @@ using namespace std;
 int main() {
 
     cout << "\n========================================" << endl;
-    cout << "   ICE CLIMBER - COMPLETE EDITION" << endl;
+    cout << "               ICE CLIMBER         " << endl;
     cout << "   With Camera, Stages, Settings" << endl;
     cout << "========================================\n" << endl;
 

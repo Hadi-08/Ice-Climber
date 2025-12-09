@@ -2,9 +2,8 @@
 #include "common.hpp"
 #include <cstdlib>
 
-// ============================================================================
+
 // STAGE 1-2: MOUNTAIN BASE (Blue sky, brown mountains)
-// ============================================================================
 
 void createMountainBackground(sf::Texture& texture) {
     sf::RenderTexture renderTex;
@@ -52,9 +51,7 @@ void createMountainBackground(sf::Texture& texture) {
     texture.loadFromImage(renderTex.getTexture().copyToImage());
 }
 
-// ============================================================================
 // STAGE 3-4: ICE CAVE (Dark blue, ice crystals)
-// ============================================================================
 
 void createIceCaveBackground(sf::Texture& texture) {
     sf::RenderTexture renderTex;
@@ -96,9 +93,7 @@ void createIceCaveBackground(sf::Texture& texture) {
     texture = renderTex.getTexture();
 }
 
-// ============================================================================
 // STAGE 5-6: SNOW PEAK (White, snowy)
-// ============================================================================
 
 void createSnowPeakBackground(sf::Texture& texture) {
     sf::RenderTexture renderTex;
@@ -137,9 +132,7 @@ void createSnowPeakBackground(sf::Texture& texture) {
     texture = renderTex.getTexture();
 }
 
-// ============================================================================
-// STAGE 7-8: GLACIER (Cyan ice, aurora)
-// ============================================================================
+// STAGE 7-8: GLACIER
 
 void createGlacierBackground(sf::Texture& texture) {
     sf::RenderTexture renderTex;
@@ -177,9 +170,7 @@ void createGlacierBackground(sf::Texture& texture) {
     texture = renderTex.getTexture();
 }
 
-// ============================================================================
 // BONUS STAGE (Stars, rainbow)
-// ============================================================================
 
 void createBonusBackground(sf::Texture& texture) {
     sf::RenderTexture renderTex;
