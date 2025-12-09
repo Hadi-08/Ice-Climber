@@ -10,7 +10,7 @@ void drawMainMenu(sf::RenderWindow& window, sf::Font& font, int selectedOption) 
     // Title with Ice Climber style
     sf::Text title;
     title.setFont(font);
-    title.setString("ICE CLIMBER");
+    title.setString("The Icy Ascent");
     title.setCharacterSize(80);
     title.setFillColor(sf::Color(82, 163, 255)); // Ice Climber blue
     title.setOutlineThickness(4);
@@ -156,7 +156,7 @@ void drawHowToPlay(sf::RenderWindow& window, sf::Font& font) {
     const char* instructions[] = {
         "OBJECTIVE:",
         "  Climb to the top of each stage!",
-        "  Avoid enemies and collect vegetables for points.",
+        "  Avoid enemies.",
         "",
         "CONTROLS:",
         "  A = Move Left",
@@ -168,7 +168,6 @@ void drawHowToPlay(sf::RenderWindow& window, sf::Font& font) {
         "  Popo (Blue) = You!",
         "  Topi (White Seal) = Enemy - Avoid!",
         "  X = Breakable Block (+10 points)",
-        "  Vegetables = +100 points each",
         "",
         "STAGES:",
         "  8 stages with increasing difficulty",
@@ -176,8 +175,8 @@ void drawHowToPlay(sf::RenderWindow& window, sf::Font& font) {
         "  Complete all 8 for BONUS STAGE!",
         "",
         "SCORING:",
-        "  Break Block: +10  |  Vegetable: +100",
-        "  Stage Clear: +1000  |  Bonus Stage: +5000"
+        "  Break Block: +10 ",
+        "  Stage Clear: +1000"
     };
 
     for (int i = 0; i < 23; i++) {
