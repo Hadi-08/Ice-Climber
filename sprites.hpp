@@ -3,9 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-// ============================================================================
 // CHARACTER SPRITES
-// ============================================================================
 
 // POPO (Blue Ice Climber Character)
 void createPopoSprite(sf::Texture& texture);
@@ -13,9 +11,7 @@ void createPopoSprite(sf::Texture& texture);
 // TOPI (White Seal Enemy)
 void createTopiSprite(sf::Texture& texture);
 
-// ============================================================================
 // VEGETABLE SPRITES (Collectibles)
-// ============================================================================
 
 void createEggplantSprite(sf::Texture& texture);
 void createCarrotSprite(sf::Texture& texture);
