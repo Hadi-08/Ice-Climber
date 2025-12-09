@@ -160,7 +160,7 @@ void drawPlayer() {
 void initializeGame() {
     playerX = 15;
     playerY = BOARD_HEIGHT - 3;
-    score = 0;
+    /*score = 0;*/
     lives = MAX_LIVES;
     gameOver = false;
     isJumping = false;

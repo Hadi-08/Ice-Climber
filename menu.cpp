@@ -104,7 +104,11 @@ void drawHighScore(sf::RenderWindow& window, sf::Font& font) {
     title.setFillColor(sf::Color(255, 215, 0)); // Gold
     title.setOutlineThickness(3);
     title.setOutlineColor(sf::Color(200, 170, 0));
-    title.setPosition(WINDOW_WIDTH / 2 - 200, 120);
+    /*Centre Align HIGHSCORE!!!*/
+    sf::FloatRect titleBounds = title.getLocalBounds();
+    title.setOrigin(titleBounds.left + titleBounds.width / 2.0f,
+        titleBounds.top + titleBounds.height / 2.0f);
+    title.setPosition(WINDOW_WIDTH / 2.0f, 150);
     window.draw(title);
 
     // High score display
@@ -118,8 +122,12 @@ void drawHighScore(sf::RenderWindow& window, sf::Font& font) {
     scoreDisplay.setFillColor(sf::Color::Yellow);
     scoreDisplay.setOutlineThickness(3);
     scoreDisplay.setOutlineColor(sf::Color(255, 200, 0));
-    scoreDisplay.setPosition(WINDOW_WIDTH / 2 - 150, 280);
-    window.draw(scoreDisplay);
+    // Center align score
+    sf::FloatRect scoreBounds = scoreDisplay.getLocalBounds();
+    scoreDisplay.setOrigin(scoreBounds.left + scoreBounds.width / 2.0f,
+        scoreBounds.top + scoreBounds.height / 2.0f);
+    scoreDisplay.setPosition(WINDOW_WIDTH / 2.0f, 310);
+    window.draw(scoreDisplay);;
 
     // Label
     sf::Text label;
@@ -127,7 +135,11 @@ void drawHighScore(sf::RenderWindow& window, sf::Font& font) {
     label.setString("points");
     label.setCharacterSize(30);
     label.setFillColor(sf::Color::White);
-    label.setPosition(WINDOW_WIDTH / 2 - 50, 420);
+    // Center align label
+    sf::FloatRect labelBounds = label.getLocalBounds();
+    label.setOrigin(labelBounds.left + labelBounds.width / 2.0f,
+        labelBounds.top + labelBounds.height / 2.0f);
+    label.setPosition(WINDOW_WIDTH / 2.0f, 450);
     window.draw(label);
 
     // Back instruction
@@ -137,10 +149,15 @@ void drawHighScore(sf::RenderWindow& window, sf::Font& font) {
     backText.setCharacterSize(22);
     backText.setFillColor(sf::Color(180, 180, 180));
     backText.setPosition(WINDOW_WIDTH / 2 - 180, WINDOW_HEIGHT - 80);
+    // Center align back text
+    sf::FloatRect backBounds = backText.getLocalBounds();
+    backText.setOrigin(backBounds.left + backBounds.width / 2.0f,
+        backBounds.top + backBounds.height / 2.0f);
+    backText.setPosition(WINDOW_WIDTH / 2.0f, WINDOW_HEIGHT - 80);
     window.draw(backText);
 }
 
-// HOW TO PLAY SCREEN
+// How to Play Screen
 
 void drawHowToPlay(sf::RenderWindow& window, sf::Font& font) {
     // Title
@@ -261,7 +278,7 @@ void handlePauseMenuInput(sf::Keyboard::Key key, int& selectedOption, int& gameS
     }
 }
 
-// GAME OVER SCREEN
+// Game Over Screen
 
 void drawGameOver(sf::RenderWindow& window, sf::Font& font) {
     // Semi-transparent overlay

@@ -7,7 +7,7 @@
 #include "sprites.hpp"
 #include "background.hpp"
 #include "camera.hpp"
-#include "settings.hpp"
+#include "settings.hpp" 
 #include "stages.hpp"
 #include "game_logic.hpp"
 #include "graphics.hpp"
@@ -19,13 +19,13 @@ using namespace std;
 int main() {
 
     cout << "\n========================================" << endl;
-    cout << "               ICE CLIMBER         " << endl;
+    cout << "          THE ICY ASCENT         " << endl;
     cout << "   With Camera, Stages, Settings" << endl;
     cout << "========================================\n" << endl;
 
     // Create window
-    sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Ice Climber");
-    window.setFramerateLimit(60);
+    sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "The Icy Ascent");
+    window.setFramerateLimit(120);
 
     sf::Music musc;
     musc.openFromFile("C:/Users/Lenovo/source/repos/IceClimber/BG.mp3");
@@ -77,7 +77,6 @@ int main() {
     cout << "Controls:" << endl;
     cout << "  Menu: UP/DOWN/ENTER" << endl;
     cout << "  Game: A/D=Move, W=Jump, ESC=Menu\n" << endl;
-
 
     // Main game loop
     while (window.isOpen()) {
@@ -133,6 +132,11 @@ int main() {
                         // Add stage complete bonus
                         score += STAGE_COMPLETE_POINTS;
 
+                        if (score > highScore) {
+                            highScore = score;
+                            saveHighScore();
+                        }
+
                         // Advance to next stage
                         advanceStage();
                         loadStageBackground(bgTex, currentStage);
@@ -156,7 +160,7 @@ int main() {
                 prevScore = score;
                 prevJumping = isJumping;
 
-                // Update game (your teammate's logic)
+                // Update Game
                 updateGame();
 
                 // Update camera to follow player

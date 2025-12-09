@@ -3,7 +3,7 @@
 #include <cstdlib>
 
 
-// STAGE 1-2: MOUNTAIN BASE (Blue sky, brown mountains)
+// STAGE 1-2: MOUNTAIN BASE
 
 void createMountainBackground(sf::Texture& texture) {
     sf::RenderTexture renderTex;
@@ -51,7 +51,7 @@ void createMountainBackground(sf::Texture& texture) {
     texture.loadFromImage(renderTex.getTexture().copyToImage());
 }
 
-// STAGE 3-4: ICE CAVE (Dark blue, ice crystals)
+// STAGE 3-4: ICE CAVE
 
 void createIceCaveBackground(sf::Texture& texture) {
     sf::RenderTexture renderTex;
@@ -93,7 +93,7 @@ void createIceCaveBackground(sf::Texture& texture) {
     texture = renderTex.getTexture();
 }
 
-// STAGE 5-6: SNOW PEAK (White, snowy)
+// STAGE 5-6: SNOW PEAK
 
 void createSnowPeakBackground(sf::Texture& texture) {
     sf::RenderTexture renderTex;
@@ -111,7 +111,7 @@ void createSnowPeakBackground(sf::Texture& texture) {
     gradient[3].color = sf::Color(240, 248, 255);
     renderTex.draw(gradient);
 
-    // Snowy mountains (white)
+    // Snowy mountains
     sf::ConvexShape mountain1;
     mountain1.setPointCount(3);
     mountain1.setPoint(0, sf::Vector2f(0, WINDOW_HEIGHT * 2));

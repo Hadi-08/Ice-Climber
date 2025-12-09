@@ -4,12 +4,12 @@
 #include <SFML/Graphics.hpp>
 #include "common.hpp"
 
-// Current stage info
+// Current Stage Info
 extern int currentStage;
 extern int stageType;
 extern bool isBonusStage;
 
-// Function declarations
+// Function Declarations
 int getStageType(int stageNum);
 void loadStageBackground(sf::Texture& texture, int stageNum);
 void loadBonusBackground(sf::Texture& texture);

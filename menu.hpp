@@ -4,9 +4,6 @@
 #include <SFML/Graphics.hpp>
 #include "common.hpp"
 
-using namespace std;
-
-// Function declarations
 void drawMainMenu(sf::RenderWindow& window, sf::Font& font, int selectedOption);
 void handleMainMenuInput(sf::Keyboard::Key key, int& selectedOption, int& gameState);
 void drawHighScore(sf::RenderWindow& window, sf::Font& font);

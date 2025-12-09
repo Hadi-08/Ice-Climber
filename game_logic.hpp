@@ -60,5 +60,4 @@ void checkClimb();
 void moveEnemies();
 void checkEnemyCollision();
 void updateGame();
-
 #endif

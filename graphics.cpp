@@ -6,7 +6,7 @@
 #include "string_utils.hpp"
 #include <cmath>
 
-// LOAD ALL RESOURCES
+// Load all Resources
 sf::Sprite player;
 
 bool loadResources(sf::Texture& playerTex, sf::Texture& enemyTex,
@@ -15,9 +15,9 @@ bool loadResources(sf::Texture& playerTex, sf::Texture& enemyTex,
     sf::SoundBuffer& jumpBuf, sf::SoundBuffer& breakBuf,
     sf::SoundBuffer& hitBuf, sf::SoundBuffer& collectBuf) {
 
-    cout << "Loading Ice Climber resources..." << endl;
+    cout << "Loading The Icy Ascent Resources..." << endl;
 
-    // Create sprites
+    // Create Sprites
     createPopoSprite(playerTex);
     createTopiSprite(enemyTex);
     createEggplantSprite(eggplantTex);
@@ -28,7 +28,7 @@ bool loadResources(sf::Texture& playerTex, sf::Texture& enemyTex,
     loadStageBackground(bgTex, currentStage);
 
     // Load font
-    if (!font.loadFromFile("C:/Users/Lenovo/source/repos/IceClimber/arial.ttf")) {
+    if (!font.loadFromFile("C:/Users/Lenovo/source/repos/IceClimber/ARIAL.ttf")) {
         cout << "Warning: Font not found" << endl;
     }
 
@@ -67,7 +67,7 @@ bool loadResources(sf::Texture& playerTex, sf::Texture& enemyTex,
     // Load audio file
     if (!buffer.loadFromFile("C:/Users/Lenovo/source/repos/IceClimber/BG.mp3")) {
         std::cerr << "Failed to load sound file!" << std::endl;
-        return -1;
+        return false;
     }
 
     // Collect sound
@@ -83,7 +83,7 @@ bool loadResources(sf::Texture& playerTex, sf::Texture& enemyTex,
     return true;
 }
 
-// RENDER GAME WITH CAMERA SCROLLING
+// Render Game with Camera Scrolling
 
 void renderGame(sf::RenderWindow& window, sf::Texture& bgTex, sf::Texture& playerTex,
     sf::Texture& enemyTex, sf::Texture& eggplantTex, sf::Font& font) {
@@ -172,8 +172,16 @@ void renderGame(sf::RenderWindow& window, sf::Texture& bgTex, sf::Texture& playe
         }
     }
 
-    // Draw HUD 
+    // Current view resets after drawing HUD
+    sf::View gameView = window.getView();
+
+    // Set view to default view for HUD
+    sf::View hudView(sf::FloatRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
+    window.setView(hudView);
+
+    // Draw HUD at bottom of screen (fixed position)
     sf::RectangleShape hudBg(sf::Vector2f(WINDOW_WIDTH, 70));
+    hudBg.setPosition(0, WINDOW_HEIGHT - 70);  // Position at bottom
     hudBg.setFillColor(sf::Color(0, 0, 0, 200));
     window.draw(hudBg);
 
@@ -189,7 +197,7 @@ void renderGame(sf::RenderWindow& window, sf::Texture& bgTex, sf::Texture& playe
     livesDisplay.setString(livesText);
     livesDisplay.setCharacterSize(22);
     livesDisplay.setFillColor(sf::Color::White);
-    livesDisplay.setPosition(10, 10);
+    livesDisplay.setPosition(10, WINDOW_HEIGHT - 60);  // 10px from bottom edge of HUD
     window.draw(livesDisplay);
 
     // Score
@@ -204,7 +212,7 @@ void renderGame(sf::RenderWindow& window, sf::Texture& bgTex, sf::Texture& playe
     scoreDisplay.setString(scoreText);
     scoreDisplay.setCharacterSize(22);
     scoreDisplay.setFillColor(sf::Color::Yellow);
-    scoreDisplay.setPosition(10, 38);
+    scoreDisplay.setPosition(10, WINDOW_HEIGHT - 32);  // Below lives
     window.draw(scoreDisplay);
 
     // Stage
@@ -219,7 +227,7 @@ void renderGame(sf::RenderWindow& window, sf::Texture& bgTex, sf::Texture& playe
     stageDisplay.setString(stageText);
     stageDisplay.setCharacterSize(22);
     stageDisplay.setFillColor(sf::Color::Cyan);
-    stageDisplay.setPosition(WINDOW_WIDTH - 120, 10);
+    stageDisplay.setPosition(WINDOW_WIDTH - 120, WINDOW_HEIGHT - 60);
     window.draw(stageDisplay);
 
     // High Score
@@ -234,17 +242,20 @@ void renderGame(sf::RenderWindow& window, sf::Texture& bgTex, sf::Texture& playe
     highScoreDisplay.setString(highScoreText);
     highScoreDisplay.setCharacterSize(22);
     highScoreDisplay.setFillColor(sf::Color(255, 215, 0));
-    highScoreDisplay.setPosition(WINDOW_WIDTH - 120, 38);
+    highScoreDisplay.setPosition(WINDOW_WIDTH - 120, WINDOW_HEIGHT - 32);
     window.draw(highScoreDisplay);
 
-    // Controls hint
+    // Controls Hint
     sf::Text controls;
     controls.setFont(font);
     controls.setString("A/D:Move W:Jump ESC:Menu");
     controls.setCharacterSize(16);
     controls.setFillColor(sf::Color(180, 180, 180));
-    controls.setPosition(WINDOW_WIDTH / 2 - 130, 10);
+    controls.setPosition(WINDOW_WIDTH / 2 - 130, WINDOW_HEIGHT - 50);
     window.draw(controls);
+
+    // Restore the game view
+    window.setView(gameView);
 }
 
 // Draw stage complete screen

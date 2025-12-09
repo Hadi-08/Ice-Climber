@@ -73,5 +73,4 @@ using namespace std;
 #define MAX_STRING_LENGTH 256
 #define MAX_HIGH_SCORES 10000
 
-
 #endif
